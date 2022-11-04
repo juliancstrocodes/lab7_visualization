@@ -49,7 +49,7 @@ d3.json("airports.json", d3.autoType).then((airports) => {
 		const drag = d3
 			.drag()
 			.on("start", (e) => {
-				force.alphaTarget(0.4).restart();
+				force.alphaTarget(0.3).restart();
 				e.subject.fx = e.x;
 				e.subject.fy = e.y;
 			})
@@ -155,7 +155,7 @@ d3.json("airports.json", d3.autoType).then((airports) => {
 				});
 				drag.filter(() => visType === "force");
 			} else {
-				force.alphaTarget(0.4).restart();
+				force.alphaTarget(0.3).restart();
 				//force.force("charge", d3.forceManyBody().strength(-120));
 				svg.selectAll("path").attr("opacity", 0);
 			}
